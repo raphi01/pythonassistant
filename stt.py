@@ -13,6 +13,8 @@ from pynput.keyboard import Key, Controller
 
 print('define...')
 
+NAME = 'robo'.lower()
+
 keyboard = Controller()
 pycomm = ['variable','definition','klasse','class','klass','importiere','import','wenn','ansonsten','if','else']
 wikipedia.set_lang("de")
@@ -68,15 +70,18 @@ def run():
             module[i] = False
         talk('gestoppt')
         p = True
-    if 'robo' in command.lower():
+    if NAME in command.lower():
         command = command.lower()
-        command = command.replace('robo ', '')
+        command = command.replace(NAME+' ', '')
         print(command)
         if 'play' in command.lower() or 'spiel' in command.lower():
             command = command.replace('spiel','')
             song = command.replace('play', '')
             talk('playing ' + song)
             pywhatkit.playonyt(song)
+        elif 'google ' in command:
+            command = command.replace('google ','')
+            pywhatkit.search(command)
         elif 'time' in command.lower() or 'zeit' in command.lower():
             time = datetime.datetime.now().strftime('%I:%M %p')
             talk('Current time is ' + time)
@@ -100,9 +105,7 @@ def run():
                 talk(info)
             except:
                 talk('kenn ich nicht')
-        elif 'google ' in command:
-            command = command.replace('google ','')
-            pywhatkit.search(command)
+        
     else:
         for i in module.keys():
             if module[i]:
