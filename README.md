@@ -8,7 +8,7 @@ pip install pyttsx3
 pip install pynput
 ```
 ## Use:
-NAME = 'robo'
+NAME = 'robo'<br>
 say "Stopp" to stop the Program <br>
 say "robo aktiviere python" << sometimes it doesn't understand python say "püthon" >> then programming (Beta) python is aktive <br>
 say "robo deaktiviere python" >> programming python is inaktiv<br>
