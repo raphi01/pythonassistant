@@ -18,7 +18,7 @@ NAME = 'robo'.lower()
 keyboard = Controller()
 pycomm = ['variable','definition','klasse','class','klass','importiere','import','wenn','ansonsten','if','else']
 wikipedia.set_lang("de")
-module = {'python':True}
+module = {'python':False}
 p = False
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -171,7 +171,7 @@ def python(x):
                     if len(werte) == 0:
                         type_it(zeile,0,name+ ' = 0\r')
                     if len(werte) == 1:
-                        type_it(zeile,0,name+ ' = '+werte[0]+'\r')
+                        type_it(zeile,0,name+ ' = '+str(werte).replace('[','').replace(']','')+'\r')
                     elif len(werte)>1:
                         type_it(zeile,0,name+ ' = '+str(werte)+'\r')
                 if inx[0] == 'definition':
@@ -287,7 +287,7 @@ def get_text(path):
     e.close()
     return output
 
-print('finisched')
+print('finished')
 
 run()
 
