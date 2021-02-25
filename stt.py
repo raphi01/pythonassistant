@@ -6,7 +6,7 @@ import speech_recognition as sr
 import threading as th
 import pyttsx3
 import datetime
-#import pywhatkit
+import pywhatkit
 import os
 import wikipedia
 from pynput.keyboard import Key, Controller
