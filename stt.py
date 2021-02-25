@@ -25,22 +25,22 @@ engine.setProperty('voices', voices[0].id)
 pyfile = ''
 buffer = ''
 
-def take_command(x=0):
+def take_command2(x=0):
     i = input(">>> ")
     sleep(1)
     return i
 
-def talk(text):
+def talk2(text):
     print(text)
 
 
 
-def talk2(text):
+def talk(text):
     engine.say(text)
     engine.runAndWait()
 
 
-def take_command2(x=0):
+def take_command(x=0):
     global p, t
     command = ''
     try:
@@ -286,6 +286,5 @@ def get_text(path):
 
 print('finisched')
 
-while not p:
-    run()
+run()
 
